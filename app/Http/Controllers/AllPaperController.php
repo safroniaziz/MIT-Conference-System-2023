@@ -8,9 +8,7 @@ use Illuminate\Http\Request;
 class AllPaperController extends Controller
 {
     public function index(){
-        $papers = Abstrak::with(['abstrakPaper'])
-                        // ->has('abstrakPaper') // Mengambil hanya abstrak yang memiliki setidaknya satu abstrakPaper
-                        ->where('user_id', auth()->user()->id)
+        $papers = Abstrak::where('user_id', auth()->user()->id)
                         ->get();
                         return $papers;
         return view('allPapers.index',[
