@@ -2,7 +2,7 @@
 <div class="modal fade" id="modalverification" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form action=" {{ route('pendingPayment.verify') }} " method="POST">
+            <form action=" {{ route('awaiting.verify') }} " method="POST">
                 {{ csrf_field() }} {{ method_field('PATCH') }}
                 <div class="modal-header">
                     <p style="font-size:15px; font-weight:bold;" class="modal-title">Confirmation Form To Verification

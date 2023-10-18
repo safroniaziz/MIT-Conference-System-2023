@@ -12,6 +12,7 @@ class AllPaperController extends Controller
                         ->has('abstrakPaper') // Mengambil hanya abstrak yang memiliki setidaknya satu abstrakPaper
                         ->where('user_id', auth()->user()->id)
                         ->get();
+                        return $papers;
         return view('allPapers.index',[
             'papers'   =>  $papers,
         ]);

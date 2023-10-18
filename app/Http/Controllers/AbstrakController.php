@@ -49,7 +49,7 @@ class AbstrakController extends Controller
         if ($create) {
             return response()->json([
                 'text'  =>  'Success, Your submission has been successfully processed. Thank you',
-                'url'   =>  url('/abstract/'),
+                'url'   =>  url('/submission/'),
             ]);
         }else {
             return response()->json(['text' =>  'Sorry, there was an issue with your submission. Please check the form and try again']);
