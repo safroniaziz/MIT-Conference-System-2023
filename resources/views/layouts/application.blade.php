@@ -60,7 +60,11 @@
                             <!-- User Account: style can be found in dropdown.less -->
                             <li class="dropdown user user-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <img src="{{ asset('storage/' . auth()->user()->photo) }}" class="user-image" alt="User Image">
+                                    @if (auth()->user()->hasRoles('administrator'))
+                                        <img src="{{ asset('admin.png') }}" class="user-image" alt="User Image">
+                                    @else
+                                        <img src="{{ asset('storage/' . auth()->user()->photo) }}" class="user-image" alt="User Image">
+                                    @endif
                                     <span class="hidden-xs">{{ auth()->user()->name }}</span>
                                 </a>
                             </li>
