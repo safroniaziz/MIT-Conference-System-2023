@@ -6,8 +6,8 @@
     <div class="box-body">
         <p>
             @php
-                $presenter = 3250000 + auth()->user()->unique_code;
-                $participant = 100000 + auth()->user()->unique_code;
+                $presenter = $setting->presenter_payment_amount + auth()->user()->unique_code;
+                $participant = $setting->participant_payment_amount + auth()->user()->unique_code;
             @endphp
             Please upload your payment proof of <b>{{ auth()->user()->hasRole('presenter') ? 'Rp. '.number_format($presenter) : 'Rp. '.number_format($participant) }}</b> in the form below.
         </p>

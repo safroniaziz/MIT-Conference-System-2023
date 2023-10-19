@@ -13,6 +13,7 @@ use App\Http\Controllers\SettingController;
 use App\Http\Controllers\VerifiedController;
 use App\Http\Controllers\VerifiedPaymentController;
 use App\Models\Abstrak;
+use App\Models\Setting;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -42,6 +43,7 @@ Route::get('/dashboardAdmin', function () {
     $rejected = Abstrak::rejected()->count();
     $participant = User::participant()->count();
     $presenter = User::presenter()->count();
+    $setting = Setting::first();
     return view('dashboardAdmin',[
         'underReview'   =>  $underReview,
         'pending'   =>  $pending,
@@ -49,6 +51,7 @@ Route::get('/dashboardAdmin', function () {
         'rejected'   =>  $rejected,
         'participant'   =>  $participant,
         'presenter'   =>  $presenter,
+        'setting'   =>  $setting,
     ]);
 })->middleware(['auth', 'verified'])->name('dashboardAdmin');
 

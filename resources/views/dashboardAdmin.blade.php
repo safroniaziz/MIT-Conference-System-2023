@@ -96,7 +96,7 @@
                     <span class="info-box-icon bg-yellow"><i class="fa fa-files-o"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">Presenter Costs</span>
-                        <span class="info-box-number">3,250.000,-</span>
+                        <span class="info-box-number">{{ number_format($setting->presenter_payment_amount) }}</span>
                     </div>
                 </div>
             </div>
@@ -106,7 +106,7 @@
                     <span class="info-box-icon bg-red"><i class="fa fa-star-o"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">Participation Costs</span>
-                        <span class="info-box-number">100,000,-</span>
+                        <span class="info-box-number">{{ number_format($setting->participant_payment_amount) }}</span>
                     </div>
                 </div>
             </div>

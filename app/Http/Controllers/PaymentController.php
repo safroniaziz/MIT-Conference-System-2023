@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Abstrak;
 use App\Models\PaymentProof;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -14,8 +15,10 @@ class PaymentController extends Controller
     public function index(){
         $payment = User::withCount(['paymentProof'])->with(['paymentProof'])->where('id',auth()->user()->id)
                             ->first();
+        $setting = Setting::first();
         return view('payment.index',[
             'payment'   =>  $payment,
+            'setting'   =>  $setting,
         ]);
     }
 
