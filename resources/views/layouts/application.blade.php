@@ -43,7 +43,7 @@
                     <!-- mini logo for sidebar mini 50x50 pixels -->
                     <span class="logo-mini"><i class="fa fa-home"></i></span>
                     <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg" style="font-size:16px;"><b>LAYANAN</b>&nbsp;FISIP</span>
+                    <span class="logo-lg" style="font-size:16px;"><b>CONFERENCE</b>&nbsp;SYSTEM</span>
                     </a>
                     <!-- Header Navbar: style can be found in header.less -->
                     <nav class="navbar navbar-static-top">
@@ -136,9 +136,9 @@
 
             <footer class="main-footer">
                 <div class="pull-right hidden-xs">
-                    <b>Fakultas Ilmu Sosial & Politik <a href="https://www.unib.ac.id/" target="_blank">Universitas Bengkulu</a></b>
+                    <b>CV. Media Inti Teknologi <a href="https://gomit.id/" target="_blank">Gomit ID</a></b>
                 </div>
-                <strong>Copyright &copy; 2023 <a href="http://fisip.unib.ac.id/" target="_blank">FISIP UNIB</a>.</strong> All rights
+                <strong>Copyright &copy; 2023 <a href="https://gomit.id/" target="_blank">Oceri Conference S$
                 reserved.
             </footer>
 
