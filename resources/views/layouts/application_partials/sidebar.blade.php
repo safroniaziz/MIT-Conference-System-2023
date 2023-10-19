@@ -83,6 +83,33 @@
 </li>
 @endif
 
+@if(auth()->user()->hasRole('administrator'))
+<li class="{{ set_active('participant') }}">
+    <a href="{{ route('participant') }}">
+        <i class="fa fa-user-check"></i>
+        <span>Registered Participants</span>
+    </a>
+</li>
+@endif
+
+@if(auth()->user()->hasRole('administrator'))
+<li class="{{ set_active('presenter') }}">
+    <a href="{{ route('presenter') }}">
+        <i class="fa fa-user-cog"></i>
+        <span>Registered Presenters</span>
+    </a>
+</li>
+@endif
+
+@if(auth()->user()->hasRole('administrator'))
+<li class="{{ set_active('setting') }}">
+    <a href="{{ route('setting') }}">
+        <i class="fa fa-cog"></i>
+        <span>Settings</span>
+    </a>
+</li>
+@endif
+
 <!-- Authentication -->
 <li>
     <a class="dropdown-item" href="{{ route('logout') }}"

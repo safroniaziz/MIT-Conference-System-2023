@@ -4,9 +4,12 @@ use App\Http\Controllers\AbstrakController;
 use App\Http\Controllers\AllPaperController;
 use App\Http\Controllers\AwaitingController;
 use App\Http\Controllers\PaperPresentationController;
+use App\Http\Controllers\ParticipantController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PendingPaymentController;
+use App\Http\Controllers\PresenterController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\VerifiedController;
 use App\Http\Controllers\VerifiedPaymentController;
 use App\Models\Abstrak;
@@ -105,6 +108,21 @@ Route::controller(VerifiedPaymentController::class)->middleware('auth')->prefix(
 
 Route::controller(AllPaperController::class)->middleware('auth')->prefix('/all_papers_and_presentations')->group(function () {
     Route::get('/', 'index')->name('allPaper');
+});
+
+Route::controller(ParticipantController::class)->middleware('auth')->prefix('/participants')->group(function () {
+    Route::get('/', 'index')->name('participant');
+    Route::patch('/', 'updatePassword')->name('participant.updatePassword');
+});
+
+Route::controller(PresenterController::class)->middleware('auth')->prefix('/presenters')->group(function () {
+    Route::get('/', 'index')->name('presenter');
+    Route::patch('/', 'updatePassword')->name('presenter.updatePassword');
+});
+
+Route::controller(SettingController::class)->middleware('auth')->prefix('/settings')->group(function () {
+    Route::get('/', 'index')->name('setting');
+    Route::patch('{setting}/update', 'update')->name('setting.update');
 });
 
 require __DIR__.'/auth.php';
